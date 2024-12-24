@@ -1,5 +1,6 @@
 type: web
 name: quiz
-env: php
-buildCommand: composer install
-startCommand: php artisan serve --host=0.0.0.0 --port=80
+env: docker
+plan: free
+buildCommand: docker build -t quiz .
+startCommand: docker run -p 80:80 quiz
